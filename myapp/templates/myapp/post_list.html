@@ -8,10 +8,13 @@
 		</div>
 
 		<div>
-			<p>published:28.04.2018, 17:00</p>
-			<h2><a href="">İlk Blogum</a></h2>
-			<p>Çok heyecanlıyım! Bu benim ilk blogum. Ne kadar zevkli bir işmiş bilgisayarlarla uğraşmak. Artık bilgi
-sayar başından kalkmam. </p>
+			{% for post in posts %} 
+				<div>
+					<p>published: {{ post.yayinlanma_tarihi }}</p> 
+					<h1><a href="">{{ post.baslik }}</a></h1> 
+					<p>{{ post.yazi|linebreaks }}</p>
+				</div>
+			{% endfor %}
 		</div>
 
 		<div>
